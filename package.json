@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "clear ; tsc ; npx hardhat run scripts/deploy.ts --network sepolia",
+    "deploy": "clear ; npx hardhat run scripts/deploy.ts --network sepolia",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
