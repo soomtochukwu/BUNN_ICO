@@ -22,6 +22,12 @@ interface IERC20 {
 
     function totalSupply() external view returns (uint);
 
+    function allow(
+        address addressFrom,
+        address addressTO,
+        uint256 allowed
+    ) external;
+
     function balanceOf(address owner) external view returns (uint);
 
     function allowance(
