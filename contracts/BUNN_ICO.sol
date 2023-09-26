@@ -3,7 +3,7 @@ pragma solidity ^0.8.19;
 
 import "../interface/IICO.sol";
 
-contract test_bi17 {
+contract test_bi12 {
     address public admin;
     address public token_address;
 
