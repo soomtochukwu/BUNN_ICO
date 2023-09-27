@@ -3,6 +3,8 @@
 
 
 #### Usage
-``Once a user registers with 0.01 eth
 
-You will be able to claim your ICO after 24 hrs``
+<code>Once you register with 0.01 eth
+
+You will be able to claim your ICO token (<strong>50 BUNN<strong>) after 24 hrs
+</code>
