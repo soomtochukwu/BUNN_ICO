@@ -5,4 +5,4 @@
 #### Usage
 ``Once a user registers with 0.01 eth
 
-You will be able to claim your ICO after 24 hrs```
+You will be able to claim your ICO after 24 hrs``
