@@ -1,24 +1,24 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.19;
 
-import "../interface/IICO.sol";
+import "@openzeppelin/contracts/interfaces/IERC20.sol";
 
-contract test_bi12 {
+contract BUNN_ICO {
     address public admin;
-    address public token_address;
+    address public ico_token;
 
     mapping(address => bool) public registered_addresses;
     mapping(address => bool) public claimed_addresses;
 
     uint256 public ico_start_time;
-    uint256 public constant ICO_DURATION = 300; // Adjust the duration as needed
+    uint256 public constant ICO_DURATION = 86400; // Adjust the duration as needed
 
     event Claimed(address indexed _address, bool status);
     event Registered(address indexed _address, bool status);
 
     constructor() {
         admin = msg.sender; // Set the contract deployer as the admin
-        token_address = address(0x66A56B0638cAdf0303CaEA18E264F18ee6cA84bf); // Replace with the correct token address
+        ico_token = address(0x846C9D65404B5325163f2850DAcF7C3Dff9ef0B2);
         ico_start_time = block.timestamp;
     }
 
@@ -48,7 +48,6 @@ contract test_bi12 {
 
     function claim() external returns (bool) {
         uint256 ico_end_time = ico_start_time + ICO_DURATION;
-
         require(block.timestamp > ico_end_time, "ICO is still ongoing");
         require(registered_addresses[msg.sender], "Address is not registered");
         require(
@@ -56,9 +55,9 @@ contract test_bi12 {
             "Address has already claimed tokens"
         );
 
-        IERC20 BUNN = IERC20(token_address);
+        IERC20 BUNN = IERC20(ico_token);
 
-        BUNN.transfer(msg.sender, 50);
+        BUNN.transferFrom(admin, msg.sender, 50e18);
 
         claimed_addresses[msg.sender] = true;
 
@@ -68,8 +67,7 @@ contract test_bi12 {
     }
 
     // Function to allow the admin to withdraw any remaining Ether in the contract
-    function withdrawEther(uint256 amount) external onlyAdmin {
-        require(amount <= address(this).balance, "Insufficient balance");
-        payable(admin).transfer(amount);
+    function withdrawEther() external onlyAdmin {
+        payable(admin).transfer(address(this).balance);
     }
 }

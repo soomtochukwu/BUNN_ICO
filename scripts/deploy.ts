@@ -3,7 +3,7 @@ import { ethers } from "hardhat";
 async function main() {
   const
     [deployer] = await ethers.getSigners(),
-    ICO = await ethers.deployContract("test_bi12");
+    ICO = await ethers.deployContract("BUNN_ICO");
 
   await ICO.waitForDeployment();
 

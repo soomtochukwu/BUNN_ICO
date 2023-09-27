@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "flat": "clear ; npx hardhat flatten > flat/flat.sol",
     "deploy": "clear ; npx hardhat run scripts/deploy.ts --network sepolia",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,6 +17,7 @@
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
     "@openzeppelin/contracts": "^4.9.3",
-    "hardhat": "^2.17.3"
+    "hardhat": "^2.17.3",
+    "hardhat-deploy": "^0.11.37"
   }
 }
