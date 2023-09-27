@@ -1,13 +1,11 @@
-# Sample Hardhat Project
+# WEB3 Bootcamp - Assignment 3
+## A simple ICO smart contract which BlockchainUNN can use to distribute the BUNN token which I created in the last assignment.
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
 
-Try running some of the following tasks:
+### Usage
+``
+Once a user registers with 0.01 eth
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.ts
+You will be able to claim your ICO after 24 hrs
+
 ```
