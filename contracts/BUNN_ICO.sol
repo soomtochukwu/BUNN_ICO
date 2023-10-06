@@ -11,7 +11,7 @@ pragma solidity ^0.8.19;
 // Import OpenZeppelin ERC20 interface for interacting with the BUNN token
 import "@openzeppelin/contracts/interfaces/IERC20.sol";
 
-contract BUNN_ICO {
+contract testICO000 {
     address public admin; // Address of the contract admin
     address public ico_token; // Address of the BUNN token contract
 
@@ -29,10 +29,15 @@ contract BUNN_ICO {
     /**
      * @dev Constructor function to initialize contract state
      */
-    constructor() {
-        admin = msg.sender; // Set the contract deployer as the admin
+    constructor(address _admin, address _ico_token, uint256 _ico_start_time) {
+        admin = _admin;
+        ico_token = address(_ico_token);
+        ico_start_time = _ico_start_time;
+
+        /* 
+        admin = msg.sender;
         ico_token = address(0x846C9D65404B5325163f2850DAcF7C3Dff9ef0B2);
-        ico_start_time = block.timestamp;
+        ico_start_time = block.timestamp; */
     }
 
     /**
